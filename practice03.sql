@@ -59,8 +59,8 @@ select a.emp_no,avg(b.salary),c.title from employees a,salaries b,titles c
 where a.emp_no=b.emp_no 
 and a.emp_no=c.emp_no 
 and b.to_date = '9999-01-01' 
-group by c.title having avg(b.salary) > 50000;
-
+group by c.title having avg(b.salary) > 50000 
+order by avg(b.salary) desc;
 
 -- 문제9.현재, 부서별 평균 연봉을 연봉이 큰 부서 순서대로 출력하세요.
 select d.dept_name,avg(b.salary) as '평균연봉' from employees a,salaries b,dept_emp c,departments d 
